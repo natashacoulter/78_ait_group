@@ -3,30 +3,28 @@ import styled from "@emotion/styled";
 export const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  width: 100%;
+  gap: 8px;
 `;
 
 export const Label = styled.label`
-  font-size: 18px;
-  color: rgb(13, 11, 42);
+  font-size: 16px;
+  font-weight: 600;
 `;
 
-export const InputComponent = styled.input`
+export const StyledInput = styled.input`
   width: 100%;
-  padding: 12px;
-  border: 2px solid rgb(13, 11, 42);
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid #cbd5e1;
   border-radius: 8px;
-  font-size: 18px;
-  outline: none;
+  font: inherit;
 
-  &::placeholder {
-    color: rgb(48, 43, 114);
+  &:focus {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
   }
 `;
-
 export const ErrorMessage = styled.div`
-  font-size: 14px;
   color: red;
-  height: 16px;
+  font-size: 14px;
 `;
