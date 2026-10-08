@@ -1,28 +1,16 @@
-import { ErrorMessage, InputComponent, InputWrapper, Label } from "./styles";
-import type { InputProps } from "./types";
+import type { InputHTMLAttributes } from "react";
+import { InputWrapper, Label, StyledInput } from "./styles";
 
-function Input({
-  name,
-  type = "text",
-  id,
-  placeholder,
-  value,
-  onChange,
-  label,
-  error
-}: InputProps) {
+type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+  id: string;
+  label: string;
+};
+
+function Input({ id, label, ...props }: InputProps) {
   return (
     <InputWrapper>
-     {label && <Label htmlFor={id}>{label}</Label>}
-      <InputComponent
-        name={name}
-        type={type}
-        id={id}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-      />
-      <ErrorMessage>{error}</ErrorMessage>
+      <Label htmlFor={id}>{label}</Label>
+      <StyledInput id={id} {...props} />
     </InputWrapper>
   );
 }
