@@ -24,5 +24,7 @@ export const StyledInput = styled.input`
     outline-offset: 2px;
   }
 `;
-
-
+export const ErrorMessage = styled.div`
+  color: red;
+  font-size: 14px;
+`;
